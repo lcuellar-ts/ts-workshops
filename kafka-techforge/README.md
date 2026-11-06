@@ -127,6 +127,16 @@ kafka-console-producer \
   --property key.separator=:
 ````
 
+````
+order-123:{"orderId":123,"event":"created"}
+order-123:{"orderId":123,"event":"updated"}
+order-456:{"orderId":456,"event":"created"}
+order-123:{"orderId":123,"event":"updated"}
+order-456:{"orderId":456,"event":"created"}
+order-456:{"orderId":456,"event":"created"}
+>
+````
+
 # 7. Replays
 
 Replay means consuming records again by moving a consumer group's offsets backward. Stop all active consumers in the group before resetting its offsets. The first command resets the selected topic's partitions to their earliest retained records; the consumer can then read those records again with the same group.
